@@ -35,7 +35,7 @@ exports.fetchAllProducts = async(req, res) => {
       }
 
       if(req.query._sort){
-        query = query.sort( `${req.query._order}${req.query._sort}`);
+        query = query.sort( `${req.query._sort}`);
       }
 
       const totalDocs = await totalProductsQuery.countDocuments();
@@ -49,6 +49,7 @@ exports.fetchAllProducts = async(req, res) => {
 
     try{
         const docs = await query;
+        console.log(docs);
         res.set('X-Total-Count', totalDocs);
         res.status(200).json(docs);
     }
