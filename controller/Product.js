@@ -34,6 +34,7 @@ exports.fetchAllProducts = async(req, res) => {
          totalProductsQuery = totalProductsQuery.find({ brand : req.query.brand });;
       }
 
+      // TODO : how to get sort on discounted price.....
       if(req.query._sort){
         query = query.sort( `${req.query._sort}`);
       }
@@ -49,7 +50,7 @@ exports.fetchAllProducts = async(req, res) => {
 
     try{
         const docs = await query;
-        console.log(docs);
+       // console.log(docs);
         res.set('X-Total-Count', totalDocs);
         res.status(200).json(docs);
     }
