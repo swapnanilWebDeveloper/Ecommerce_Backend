@@ -13,7 +13,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "json-server": "^1.0.0-alpha.23",
-    "mongoose": "^8.3.2"
+    "mongoose": "^8.3.2",
+    "passport": "^0.7.0"
   }
 }

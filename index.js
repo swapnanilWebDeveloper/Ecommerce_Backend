@@ -2,6 +2,8 @@ const express = require("express");
 const server = express();
 const mongoose = require("mongoose");
 const cors = require('cors')
+const session = require('express-session')
+const passport = require('passport')
 
 const { createProduct } = require("./controller/Product");
 const productsRouter = require('./routes/Products');
@@ -11,6 +13,7 @@ const userRouter = require('./routes/User');
 const authRouter = require('./routes/Auth');
 const cartRouter = require('./routes/Cart');
 const ordersRouter = require('./routes/Order');
+
 // middleware 
 
 server.use(cors({
